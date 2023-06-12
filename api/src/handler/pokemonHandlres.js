@@ -1,20 +1,41 @@
+const { createPokemonDB, getPokemonAll, getPokemonById } = require('../controlers/pokemonControllers')
+
 //Handles de Pokemons
-const getPokemonName = (req, res) => {
+const getPokemonName = async (req, res) => {
     const {name} = req.query;
-    if(name) {
-        return res.status(200).send(`El pokemon ${name} ha sido encontrado`)
+    try {
+        if(name) {
+            const response = await getPokemonAll(name);
+            return res.status(200).json(response);
+        }
+    const response = await getPokemonAll();
+    return res.status(202).json(response);
+    } catch (error) {
+        res.status(400).json({error: error.message});
     }
-    res.status(201).send('Todos los pokemons')
+   
 };
 
-const getPokemonId = (req, res) => {
+const getPokemonId = async (req, res) => {
     const {id} = req.params;
-    res.status(200).send(`este numero es ${id}`)
+    try {
+        const response = await getPokemonById(id)
+        res.status(200).json(response)
+    } catch (error) {
+        res.status(400).json({error: error.message});
+    }
+    
 };
 
-const createPokemon = (req, res) => {
-    const {name} = req.body;
-    res.status(200).send(`Pokemon ${name} creado correctamente`);
+const createPokemon = async (req, res) => {
+    const {name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight} = req.body;
+    try {
+        const response = await (createPokemonDB(name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight));
+        res.status(200).json(response);
+    } catch (error) {
+        res.status(400).json({error: error.message});  
+    }
+    
 }
 
 module.exports = {

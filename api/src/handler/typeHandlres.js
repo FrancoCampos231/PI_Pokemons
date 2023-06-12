@@ -1,6 +1,14 @@
+const { allType } = require('../controlers/typeControllers') 
+
 //Tipos de pokemon
-const getTypePokemon = (req, res) => {
-    res.status(200).send('Type correcto')
+const getTypePokemon = async (req, res) => {
+    try {
+        const response = await allType();
+        res.status(200).json(response);
+    } catch (error) {
+        res.status(400).json({error: error.message});
+    }
+    
 };
 
 module.exports = {
