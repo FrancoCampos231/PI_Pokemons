@@ -1,11 +1,22 @@
 const {Op} = require('sequelize');
-const {Pokemon} = require('../db');
+const {Pokemon, Type} = require('../db');
 const axios = require('axios');
 
-const createPokemonDB = async (name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight) => {
-    const newPokemon = await Pokemon.create({name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight});
-    return newPokemon;
+//Creamos un pokemon
+const createPokemonDB = async (name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight, types) => {
+
+
+    const createPokemon = await Pokemon.create({name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight});
+
+    const allTypes = await Type.findAll({
+        where : {name : types}
+    });
+
+    createPokemon.addType(allTypes)
+    return "se a creado el pokemon con exito";
 };
+
+ 
 
 // const getPokemonNameDB = async (name) => {
 //     if(name) {
@@ -23,7 +34,13 @@ const createPokemonDB = async (name, image, hp, attack, special_attack, defends,
 
 //Trameos pokemons de la BD
 const getPokemonBD = async () => {
-    const allPokemonDB = await Pokemon.findAll();
+    const allPokemonDB = await Pokemon.findAll({
+        include : {
+            model: Type,
+            attributes: ["name"],
+            through : {attributes: {}}
+        }
+    });
     return allPokemonDB
 };
 
@@ -59,6 +76,7 @@ const getPokemonApi = async () => {
     return response;
 };
 
+//buscamos el pokemon por el nombre, ya sea en la base de datos o en la API
 const getPokemonAll = async (name) => {
     const pokemonDB = await getPokemonBD();
     const pokemonApi = await getPokemonApi();
@@ -72,7 +90,7 @@ const getPokemonAll = async (name) => {
     }
 }
 
-
+//Buscar el pokemon por el id
 const getPokemonById = async (id) => {
     if(isNaN(id)) {
         const pokemon = await Pokemon.findByPk(id);
@@ -88,7 +106,8 @@ const getPokemonById = async (id) => {
             special_defends: pokemon.special_defends,
             speed: pokemon.speed,
             height: pokemon.height,
-            weight: pokemon.weight
+            weight: pokemon.weight,
+            types: pokemon.types
         }
     
 
