@@ -1,7 +1,10 @@
 const Landing = () => {
 
     return (
-        <div>Welcome to Pokemon World</div>
+        <div>
+            <h1>Welcome to Pokedex</h1>
+            <button>Home</button>
+        </div>
     )
 
 }

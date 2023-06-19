@@ -43,7 +43,7 @@ module.exports = (sequelize) => {
       },
     },
     //defensa
-    defends: {
+    defense: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
@@ -59,7 +59,7 @@ module.exports = (sequelize) => {
       },
     },
     //defensa especial
-    special_defends: {
+    special_defense: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {

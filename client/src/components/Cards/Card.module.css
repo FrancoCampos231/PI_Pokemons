@@ -1,0 +1,303 @@
+.card_container {
+    display: flex;
+    flex-direction: column;
+    background-color: #76D7C4;
+    border: 1px solid #117A65 ;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+
+.card_container:hover {
+    transform: scale(1.05);
+}
+
+.normal {
+    background-color: #A6ACAF;
+    border: 5px solid #D7DBDD ;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.flying {
+    background-color: #5499C7;
+    border: 5px solid #A9CCE3;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.fire {
+    background-color: #E64A19;
+    border: 5px solid #FF7043;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.grass {
+    background-color: #558B2F;
+    border: 5px solid #8BC34A;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.poison {
+    background-color: #6A1B9A;
+    border: 5px solid #9C27B0;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.water {
+    background-color: #42A5F5;
+    border: 5px solid #BBDEFB;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.bug {
+    background-color: #CDDC39;
+    border: 5px solid #E6EE9C;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.electric {
+    background-color: #FFEB3B;
+    border: 5px solid #FFF59D;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.ground {
+    background-color: #F9A825;
+    border: 5px solid #FDD835;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.rock {
+    background-color: #8D6E63;
+    border: 5px solid #D7CCC8 ;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.fighting {
+    background-color: #A93226;
+    border: 5px solid #D98880;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.psychic {
+    background-color: #E91E63;
+    border: 5px solid #F48FB1;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.fairy {
+    background-color: #FF66FF;
+    border: 5px solid #FFCCFF;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.dark {
+    background-color: #4E342E;
+    border: 5px solid #8D6E63;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.ghost {
+    background-color: #4A235A;
+    border: 5px solid #7D3C98;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.dragon {
+    background-color: #283593;
+    border: 5px solid #E91E63;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.ice {
+    background-color: #4DD0E1;
+    border: 5px solid #B2EBF2;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.steel {
+    background-color: #78909C;
+    border: 5px solid #CFD8DC;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+
+.unknown {
+    background-color: #0E6655;
+    border: 5px solid #16A085;
+    border-radius: 15px;
+    font-size: larger;
+    color: white;
+    -webkit-text-stroke: 0.8px #050709;
+    font-family: monospace;
+    font-size: 25px;
+    font-stretch: ultra-condensed;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #273746;
+}
+

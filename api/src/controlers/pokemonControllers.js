@@ -3,10 +3,10 @@ const {Pokemon, Type} = require('../db');
 const axios = require('axios');
 
 //Creamos un pokemon
-const createPokemonDB = async (name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight, types) => {
+const createPokemonDB = async (name, image, hp, attack, special_attack, defense, special_defense, speed, height, weight, types) => {
 
 
-    const createPokemon = await Pokemon.create({name, image, hp, attack, special_attack, defends, special_defends, speed, height, weight});
+    const createPokemon = await Pokemon.create({name, image, hp, attack, special_attack, defense, special_defense, speed, height, weight});
 
     const allTypes = await Type.findAll({
         where : {name : types}
@@ -46,7 +46,7 @@ const getPokemonBD = async () => {
 
 //Traemos pokemon de la Api
 const getPokemonApi = async () => {
-    const getpokemon= (await axios.get('https://pokeapi.co/api/v2/pokemon?limit=150')).data.results;
+    const getpokemon= (await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1101')).data.results;
     const allPokemonApi = getpokemon.map(pokemon => {
             return {
                     url : pokemon.url,
@@ -63,9 +63,9 @@ const getPokemonApi = async () => {
             image: onePokemon.sprites.other['official-artwork']['front_default'],
             hp: onePokemon.stats[0].base_stat,
             attack: onePokemon.stats[1].base_stat,
-            defends : onePokemon.stats[2].base_stat,
+            defense : onePokemon.stats[2].base_stat,
             special_attack: onePokemon.stats[3].base_stat,
-            special_defends: onePokemon.stats[4].base_stat,
+            special_defense: onePokemon.stats[4].base_stat,
             speed: onePokemon.stats[5].base_stat,
             height: onePokemon.height,
             weight: onePokemon.weight,
@@ -101,9 +101,9 @@ const getPokemonById = async (id) => {
             image: pokemon.image,
             hp: pokemon.hp,
             attack: pokemon.attack,
-            defends : pokemon.defends,
+            defense : pokemon.defense,
             special_attack: pokemon.special_attack,
-            special_defends: pokemon.special_defends,
+            special_defense: pokemon.special_defense,
             speed: pokemon.speed,
             height: pokemon.height,
             weight: pokemon.weight,
@@ -121,9 +121,9 @@ const getPokemonById = async (id) => {
         image: pokemon.sprites.other['official-artwork']['front_default'],
         hp: pokemon.stats[0].base_stat,
         attack: pokemon.stats[1].base_stat,
-        defends : pokemon.stats[2].base_stat,
+        defense : pokemon.stats[2].base_stat,
         special_attack: pokemon.stats[3].base_stat,
-        special_defends: pokemon.stats[4].base_stat,
+        special_defense: pokemon.stats[4].base_stat,
         speed: pokemon.stats[5].base_stat,
         height: pokemon.height,
         weight: pokemon.weight,
